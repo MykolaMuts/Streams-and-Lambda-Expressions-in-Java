@@ -35,8 +35,8 @@ public class LambdasExample03 {
         // The variable must be effectively final; if it is not, an error will appear in the lambda expression.
         ProductFilter filter = product -> product.getPrice().compareTo(priceLimit) < 0;
 
-        // Reassigning the variable, even after the lambda expression, makes it not effectively final.
-        // priceLimit = new BigDecimal("6.00");
+//         Reassigning the variable, even after the lambda expression, makes it not effectively final.
+//         priceLimit = new BigDecimal("6.00");
 
         printProducts(products, filter);
     }

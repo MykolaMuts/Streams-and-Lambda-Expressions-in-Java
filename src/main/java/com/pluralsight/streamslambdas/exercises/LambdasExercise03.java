@@ -25,7 +25,8 @@ public class LambdasExercise03 {
     public ShoppingCartFactory getShoppingCartFactory() {
         // TODO: Implement interface ShoppingCartFactory by using a method reference
         // Note: Don't implement ShoppingCartFactory with an anonymous class
-        return null; // Replace 'null' by your solution
+        return ShoppingCart::new; // Replace 'null' by your solution
+
     }
 
     public static class ShoppingCart {
@@ -45,8 +46,12 @@ public class LambdasExercise03 {
 
             // TODO: This solution does not work. Can you explain why?
 //            products.forEach(product -> total.add(product.getPrice()));
+            // because total must act like final
 
             // TODO: Implement this method in whatever way you like (you don't have to use lambda expressions)
+            for (Product product : products) {
+                total = total.add(new BigDecimal(String.valueOf(product.getPrice())));
+            }
 
             return total;
         }

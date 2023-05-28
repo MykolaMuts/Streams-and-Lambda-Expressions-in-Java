@@ -25,6 +25,9 @@ public class LambdasExample07 {
     public static void main(String[] args) {
         List<Product> products = ExampleData.getProducts();
 
+
+        products.forEach(System.out::println);
+
         // Instead of a lambda expression, you can use a method reference to refer to a method
         // that implements the relevant functional interface.
 //        products.forEach(product -> System.out.println(product));
